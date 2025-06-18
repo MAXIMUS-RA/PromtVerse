@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 export const useGSAP = () => {
@@ -10,7 +9,6 @@ export const useGSAP = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero animations
       gsap.fromTo('.hero-title', 
         { 
           opacity: 0, 
@@ -69,7 +67,6 @@ export const useGSAP = () => {
         }
       );
 
-      // Floating stars animation
       gsap.to('.floating-star', {
         y: -20,
         rotation: 360,
@@ -80,7 +77,6 @@ export const useGSAP = () => {
         stagger: 0.5
       });
 
-      // Section animations with ScrollTrigger
       gsap.utils.toArray('.animate-section').forEach((section: any) => {
         gsap.fromTo(section, 
           { 
